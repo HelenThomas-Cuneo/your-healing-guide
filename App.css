@@ -1,0 +1,230 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* Brand Colors */
+  --color-brand-gold: #D4AF37;
+  --color-brand-dirt-red: #8B4513;
+  --color-brand-mustard: #FFDB58;
+  --color-brand-orange: #FF8C00;
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: #FDF6E3; /* Warm cream background */
+  --foreground: #3E2723; /* Dark brown text */
+  --card: #FFFEF7; /* Light cream cards */
+  --card-foreground: #3E2723;
+  --popover: #FFFEF7;
+  --popover-foreground: #3E2723;
+  --primary: #D4AF37; /* Brand gold */
+  --primary-foreground: #FFFFFF;
+  --secondary: #FFDB58; /* Brand mustard */
+  --secondary-foreground: #3E2723;
+  --muted: #F5F5DC; /* Beige */
+  --muted-foreground: #8D6E63;
+  --accent: #FF8C00; /* Brand orange */
+  --accent-foreground: #FFFFFF;
+  --destructive: #D32F2F;
+  --border: #E8D5B7;
+  --input: #F5F5DC;
+  --ring: #D4AF37;
+  --chart-1: #D4AF37;
+  --chart-2: #FF8C00;
+  --chart-3: #8B4513;
+  --chart-4: #FFDB58;
+  --chart-5: #CD853F;
+  --sidebar: #FFFEF7;
+  --sidebar-foreground: #3E2723;
+  --sidebar-primary: #D4AF37;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F5F5DC;
+  --sidebar-accent-foreground: #3E2723;
+  --sidebar-border: #E8D5B7;
+  --sidebar-ring: #D4AF37;
+  
+  /* Brand color variables */
+  --brand-gold: #D4AF37;
+  --brand-dirt-red: #8B4513;
+  --brand-mustard: #FFDB58;
+  --brand-orange: #FF8C00;
+}
+
+.dark {
+  --background: #2E1A0F; /* Dark brown background */
+  --foreground: #F5F5DC; /* Light beige text */
+  --card: #3E2723;
+  --card-foreground: #F5F5DC;
+  --popover: #3E2723;
+  --popover-foreground: #F5F5DC;
+  --primary: #D4AF37; /* Keep brand gold */
+  --primary-foreground: #2E1A0F;
+  --secondary: #8B4513; /* Brand dirt red */
+  --secondary-foreground: #F5F5DC;
+  --muted: #4E342E;
+  --muted-foreground: #BCAAA4;
+  --accent: #FF8C00; /* Brand orange */
+  --accent-foreground: #2E1A0F;
+  --destructive: #F44336;
+  --border: #5D4037;
+  --input: #4E342E;
+  --ring: #D4AF37;
+  --chart-1: #D4AF37;
+  --chart-2: #FF8C00;
+  --chart-3: #FFDB58;
+  --chart-4: #CD853F;
+  --chart-5: #DEB887;
+  --sidebar: #3E2723;
+  --sidebar-foreground: #F5F5DC;
+  --sidebar-primary: #D4AF37;
+  --sidebar-primary-foreground: #2E1A0F;
+  --sidebar-accent: #4E342E;
+  --sidebar-accent-foreground: #F5F5DC;
+  --sidebar-border: #5D4037;
+  --sidebar-ring: #D4AF37;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom brand utility classes */
+@layer utilities {
+  .text-brand-gold {
+    color: var(--brand-gold);
+  }
+  .text-brand-dirt-red {
+    color: var(--brand-dirt-red);
+  }
+  .text-brand-mustard {
+    color: var(--brand-mustard);
+  }
+  .text-brand-orange {
+    color: var(--brand-orange);
+  }
+  .bg-brand-gold {
+    background-color: var(--brand-gold);
+  }
+  .bg-brand-dirt-red {
+    background-color: var(--brand-dirt-red);
+  }
+  .bg-brand-mustard {
+    background-color: var(--brand-mustard);
+  }
+  .bg-brand-orange {
+    background-color: var(--brand-orange);
+  }
+  .border-brand-gold {
+    border-color: var(--brand-gold);
+  }
+  .border-brand-dirt-red {
+    border-color: var(--brand-dirt-red);
+  }
+  .border-brand-mustard {
+    border-color: var(--brand-mustard);
+  }
+  .border-brand-orange {
+    border-color: var(--brand-orange);
+  }
+}
+
+/* Avatar container styles */
+.avatar-container {
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+  transition: all 0.3s ease;
+}
+
+.avatar-container:hover {
+  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.5);
+  transform: scale(1.05);
+}
+
+/* Pulse animation for speaking avatar */
+.avatar-speaking {
+  animation: pulse-gold 2s infinite;
+}
+
+@keyframes pulse-gold {
+  0% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(212, 175, 55, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+  }
+}
+
+/* Sacred symbol styling */
+.om-symbol {
+  color: var(--brand-gold);
+  font-size: 2rem;
+  text-shadow: 0 2px 4px rgba(212, 175, 55, 0.3);
+}
+
+/* Gradient backgrounds */
+.gradient-gold-orange {
+  background: linear-gradient(135deg, var(--brand-gold) 0%, var(--brand-orange) 100%);
+}
+
+.gradient-mustard-gold {
+  background: linear-gradient(135deg, var(--brand-mustard) 0%, var(--brand-gold) 100%);
+}
+
+/* Button hover effects */
+.btn-brand {
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-brand:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
